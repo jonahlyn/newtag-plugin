@@ -1,6 +1,6 @@
 /*! jQuery Newtag Plugin - v0.1.0 - 2012-11-01
 * https://github.com/jonahlyn/newtag-plugin
-* Copyright (c) 2012 Jonahlyn Gilstrap; Licensed MIT, GPL */
+* Author: Jonahlyn Gilstrap;*/
 
 (function($){
   
