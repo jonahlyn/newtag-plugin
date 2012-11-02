@@ -85,5 +85,33 @@
     this.elem.newtag({'expiration': year+'/'+month+'/'+day});
     equal($('span.new', this.elem).length, 0, 'should not show the new tag if today is after the expiration date.');
   });
+  
+  // test a 6 month time frame
+  test('shown before expiration date (6 months)', function(){
+    var sixmonths = new Date(), year, month, day;
+    
+    sixmonths.setMonth(this.today.getMonth() + 6);
+    year = sixmonths.getFullYear();
+    month = sixmonths.getMonth()+1;
+    day = sixmonths.getDate();
+    
+    this.elem.newtag({'expiration': year+'/'+month+'/'+day});
+    equal($('span.new', this.elem).length, 1, 'should show the new tag if today is before the expiration date.');
+    //equal(year+'/'+month+'/'+day, 'test', 'testing');
+  });
+  
+  // test a 6 month time frame
+  test('not shown after expiration date (6 months)', function(){
+    var sixmonths = new Date(), year, month, day;
+    
+    sixmonths.setMonth(this.today.getMonth() - 6);
+    year = sixmonths.getFullYear();
+    month = sixmonths.getMonth()+1;
+    day = sixmonths.getDate();
+    
+    this.elem.newtag({'expiration': year+'/'+month+'/'+day});
+    equal($('span.new', this.elem).length, 0, 'should not show the new tag if today is after the expiration date.');
+    //equal(year+'/'+month+'/'+day, 'test', 'testing');
+  });  
 
 }(jQuery));
