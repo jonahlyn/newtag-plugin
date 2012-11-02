@@ -35,6 +35,7 @@
         'text' : 'new!',
         'css' : {
           'color': 'gold',
+          'font-size': '14px',
           'padding-left':'5px',
           'position':'absolute',
           'top':'5px',
