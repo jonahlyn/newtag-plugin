@@ -39,7 +39,7 @@
 
   // Has a default expiration date
   test('defaults options', function() {
-    strictEqual($.fn.newtag.defaults.expiration, '2012-12-31', 'should have a default expiration date');
+    strictEqual($.fn.newtag.defaults.expiration, '2012/12/31', 'should have a default expiration date');
   });
   
   // creates a span tag with text and css class specified
@@ -69,7 +69,7 @@
     month = nextweek.getMonth()+1;
     day = nextweek.getDate();
     
-    this.elem.newtag({'expiration': year+'-'+month+'-'+day});
+    this.elem.newtag({'expiration': year+'/'+month+'/'+day});
     equal($('span.new', this.elem).length, 1, 'should show the new tag if today is before the expiration date.');
   });
   
@@ -82,7 +82,7 @@
     month = lastweek.getMonth()+1;
     day = lastweek.getDate();
     
-    this.elem.newtag({'expiration': year+'-'+month+'-'+day});
+    this.elem.newtag({'expiration': year+'/'+month+'/'+day});
     equal($('span.new', this.elem).length, 0, 'should not show the new tag if today is after the expiration date.');
   });
 
